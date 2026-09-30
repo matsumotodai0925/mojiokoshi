@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>録音文字起こしツール｜Web会議の録音と文字起こし（Windows・ローカル処理）</title>
-<meta name="description" content="Web会議の音声を録音して、そのまま文字起こし。議事録づくりのための、オフラインで動く無料ツール。インターネットに接続せず、すべてPCの中だけで処理します。テキスト・字幕・Word・Excelで書き出し。MIT License のオープンソース。">
+<meta name="description" content="Web会議の音声を録音して、そのまま文字起こし。議事録づくりのための、オフラインで動く無料ツール。インターネットに接続せず、すべてPCの中だけで処理します。テキスト・字幕・Word・Excelで書き出し。文字起こしの精度は高くないため、生成AIシステムによる補完・校正を前提としています。MIT License のオープンソース。">
 <link rel="canonical" href="https://matsumotodai0925.github.io/mojiokoshi/">
 <meta property="og:title" content="録音文字起こしツール｜Web会議の録音と文字起こし">
 <meta property="og:description" content="Web会議の音声を録音して、そのまま文字起こし。すべてPCの中だけで処理します。MIT License。">
@@ -24,7 +24,7 @@
   "@type": "SoftwareApplication",
   "name": "録音文字起こしツール",
   "url": "https://matsumotodai0925.github.io/mojiokoshi/",
-  "description": "Web会議の音声を録音して、そのまま文字起こし。議事録づくりのための、オフラインで動く無料ツール。インターネットに接続せず、すべてPCの中だけで処理します。テキスト・字幕・Word・Excelで書き出し。MIT License のオープンソース。",
+  "description": "Web会議の音声を録音して、そのまま文字起こし。議事録づくりのための、オフラインで動く無料ツール。インターネットに接続せず、すべてPCの中だけで処理します。テキスト・字幕・Word・Excelで書き出し。文字起こしの精度は高くないため、生成AIシステムによる補完・校正を前提としています。MIT License のオープンソース。",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Windows",
   "inLanguage": "ja",
@@ -68,7 +68,8 @@
         <span class="pill"><b>MIT License</b> · オープンソース</span>
         <h1>Web会議の録音と文字起こし</h1>
         <p class="lead">Web会議の音声をそのまま録音して、終わったら文字起こし。
-          インターネットにつながっていなくても動きます。音声も文字も、PCの外には出ません。</p>
+          インターネットにつながっていなくても動きます。音声も文字も、PCの外には出ません。
+          文字起こしの精度は高くないため、結果は生成AIシステムで補完・校正してからお使いください。</p>
         <div class="hero-actions">
           <a class="btn btn-main" href="https://github.com/matsumotodai0925/mojiokoshi/releases/latest/download/rokuon-mojiokoshi-tool-meeting.zip">本体をダウンロードする</a>
           <a class="btn btn-sub" href="https://github.com/matsumotodai0925/mojiokoshi">GitHubで見る</a>
@@ -137,6 +138,7 @@
             <li>Whisper（large-v3-turbo）をローカルで実行</li>
             <li>手持ちの音声・動画ファイルも可（WAV / M4A / MP3 / FLAC / MP4）</li>
             <li>残り時間つきの進捗表示</li>
+            <li>精度は高くないため、生成AIシステムによる補完・校正を前提に使う</li>
           </ul>
         </div>
         <div class="card">
@@ -198,6 +200,7 @@
           <div class="flow-step"><em>02</em><span>停止すると、録音ファイルが保存される</span></div>
           <div class="flow-step"><em>03</em><span>そのまま文字起こしが始まる</span></div>
           <div class="flow-step"><em>04</em><span>テキスト・字幕・Word・Excel が音声と同じ場所に保存される</span></div>
+          <div class="flow-step"><em>05</em><span>生成AIシステムで補完・校正する。要約も、この文字起こしデータを使う（このツールの機能ではありません）</span></div>
         </div>
       </div>
     </div>
@@ -281,7 +284,9 @@ py -m PyInstaller 文字起こしツール_会議録音_fw.spec</pre>
         <b>Web会議を録音するときは、参加者への告知と同意を必ず取ってください。</b>
         録音した内容の取り扱いは、所属する組織のルールに従ってください。
         また、文字起こしはAIによる自動処理のため、人名や固有名詞を中心に誤変換が含まれます。
-        重要な記録は、必ず元の音声と照らし合わせて確認してください。
+        重要な記録は、必ず元の音声と照らし合わせて確認してください。<br>
+        文字起こしの精度は高くないため、そのまま議事録などに使わず、生成AIシステムによる補完・校正を行ってください。
+        要約する場合も、音声から直接ではなく、一度文字起こししたデータを使うことをおすすめします。
       </div>
     </div>
   </section>
@@ -301,6 +306,12 @@ py -m PyInstaller 文字起こしツール_会議録音_fw.spec</pre>
         <summary>自分の声も録音されますか？</summary>
         <p>録音されるのは「PCから流れてくる音（相手の声）」です。自分がマイクで話した声は
           含まれません。自分の声も残したい場合は、会議アプリ側の録音機能をご利用ください。</p>
+      </details>
+      <details>
+        <summary>文字起こしの精度はどのくらいですか？ 要約はできますか？</summary>
+        <p>人名や固有名詞を中心に誤変換が含まれるため、精度は高くありません。文字起こしの結果は、
+          生成AIシステムによる補完・校正を行ってから使ってください。要約するときも、音声から直接ではなく、
+          一度文字起こししたデータを使うことをおすすめします。このツール自体に、補完・校正・要約の機能はありません。</p>
       </details>
       <details>
         <summary>誰が話したかは分かりますか？</summary>
