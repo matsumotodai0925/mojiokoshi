@@ -105,7 +105,7 @@
 
   <div class="specs">
     <div class="wrap specs-grid">
-      <div class="spec"><b>ネット接続なしで動く</b><span>通信するのはモデル取得のときだけ</span></div>
+      <div class="spec"><b>ネット接続なしで動く</b><span>配布版はモデル同梱で、通信しません</span></div>
       <div class="spec"><b>会員登録なし・無料</b><span>MIT License のオープンソース</span></div>
       <div class="spec"><b>相手の声を録音</b><span>ドライバも管理者権限も不要</span></div>
       <div class="spec"><b>4つの形式で保存</b><span>テキスト／字幕／Word／Excel</span></div>
@@ -175,8 +175,8 @@
         <div class="stage-list">
           <div class="stage-item">
             <b>ローカルで完結する</b>
-            <span>音声認識のモデルをPC内に持ち、そこで処理します。通信するのは、
-              最初にモデルを取得するときだけです。</span>
+            <span>音声認識のモデルをPC内に持ち、そこで処理します。配布版はモデルを同梱しているため、
+              通信は発生しません（自分でビルドする場合のみ、最初にモデルを取得します）。</span>
           </div>
           <div class="stage-item">
             <b>落ちても巻き込まれない</b>
@@ -299,8 +299,8 @@ py -m PyInstaller 文字起こしツール_会議録音_fw.spec</pre>
 
       <details>
         <summary>音声や文字起こしの内容が、外部に送信されることはありますか？</summary>
-        <p>ありません。録音も音声認識も、すべてPCの中で処理します。通信が発生するのは、
-          最初に音声認識のモデルを取得するときだけです。</p>
+        <p>ありません。録音も音声認識も、すべてPCの中で処理します。配布版はモデルを同梱しているため、
+          通信は発生しません。自分でビルドする場合だけ、最初に音声認識のモデルを取得します。</p>
       </details>
       <details>
         <summary>自分の声も録音されますか？</summary>
@@ -333,6 +333,12 @@ py -m PyInstaller 文字起こしツール_会議録音_fw.spec</pre>
           配布しているZIPは、GitHub上で公開しているソースと手順（<code>.github/workflows/build-exe.yml</code>）から
           自動でビルドしたものです。組織で管理しているPCの場合は、情報システム担当に除外登録を相談するか、
           上の「自分でビルドする場合」の手順で作ってください。</p>
+      </details>
+      <details>
+        <summary>うまく動きません。どこに問い合わせればいいですか？</summary>
+        <p>EXE と同じフォルダに「診断ログ.txt」が出力されます。<a href="https://github.com/matsumotodai0925/mojiokoshi/issues">GitHub の Issues</a> に、
+          このファイルを添えて書き込んでください。Issues は公開されるため、診断ログに含まれるPCの構成や
+          実行場所（フォルダ名など）を確認し、出したくない部分は伏せてから貼ってください。</p>
       </details>
     </div>
   </section>
