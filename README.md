@@ -21,8 +21,8 @@ Windows上で完結する、録音と文字起こしのツールです。録音�
 
 ## ダウンロード
 
-**[rokuon-mojiokoshi-tool-meeting.zip（会議録音版）](https://github.com/pikaring/rock-on-mj/releases/latest/download/rokuon-mojiokoshi-tool-meeting.zip)**
-／ ファイル文字起こし版は [Releases](https://github.com/pikaring/rock-on-mj/releases) の `rokuon-mojiokoshi-tool-fw.zip`
+**[rokuon-mojiokoshi-tool-meeting.zip（会議録音版）](https://github.com/matsumotodai0925/mojiokoshi/releases/latest/download/rokuon-mojiokoshi-tool-meeting.zip)**
+／ ファイル文字起こし版は [Releases](https://github.com/matsumotodai0925/mojiokoshi/releases) の `rokuon-mojiokoshi-tool-fw.zip`
 
 1. ZIPを右クリック →「プロパティ」→「許可する」にチェック → 展開
 2. `mojiokoshi.exe` を起動（初回は1〜2分かかります）
