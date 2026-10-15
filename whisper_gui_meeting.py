@@ -885,9 +885,16 @@ class WhisperApp(tk.Tk):
         self.save_btn.pack(side='left', padx=8)
 
     def _browse_model(self):
-        path = filedialog.askdirectory(title='モデルフォルダを選択')
+        # フォルダ選択（askdirectory）は使わない。soundcard が import 時に
+        # メインスレッドの COM を MTA で初期化するため，フォルダ選択ダイアログが
+        # 固まる。ファイル選択は問題なく動くので，model.bin を選んでもらう。
+        cur = self.model_var.get().strip()
+        path = filedialog.askopenfilename(
+            title='モデルフォルダの model.bin を選択',
+            initialdir=os.path.dirname(cur) if os.path.isdir(cur) else app_base_dir(),
+            filetypes=[('モデルファイル', 'model.bin'), ('すべてのファイル', '*.*')])
         if path:
-            self.model_var.set(path)
+            self.model_var.set(os.path.normpath(os.path.dirname(path)))
 
     def _browse_audio(self):
         path = filedialog.askopenfilename(
@@ -1189,7 +1196,7 @@ class WhisperApp(tk.Tk):
         if not model_path or not os.path.isdir(model_path):
             messagebox.showerror('エラー',
                 'モデルフォルダが見つかりません。\n'
-                '「参照」ボタンでモデルフォルダ（model.bin 等を含むフォルダ）を選択してください。')
+                '「参照」ボタンで，モデルフォルダの中の model.bin を選択してください。')
             return
         if not audio_path or not os.path.exists(audio_path):
             messagebox.showerror('エラー',
