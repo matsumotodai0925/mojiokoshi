@@ -31,7 +31,11 @@
 
 ■ うまく動かないとき
   EXE と同じフォルダ（書き込めない場合は %LOCALAPPDATA%\文字起こしツール）に
-  「診断ログ.txt」が出力されます。問い合わせの際はこのファイルを添えてください。
+  「診断ログ.txt」が出力されます。問い合わせは下の GitHub の Issues へ、
+  このファイルを添えてお願いします。
+    https://github.com/matsumotodai0925/mojiokoshi/issues
+  Issues は公開されるため、診断ログに含まれるPCの構成や実行場所（フォルダ名など）を
+  確認し、出したくない部分は伏せてから貼ってください。
 
 ■ ソースコード・ライセンス
   https://github.com/matsumotodai0925/mojiokoshi
