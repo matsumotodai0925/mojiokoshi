@@ -29,6 +29,21 @@
   ・固有名詞や専門用語は、EXE と同じフォルダの「辞書.txt」に1行ずつ書くと
     認識されやすくなります（初回起動時に自動で作られます）。
 
+■ モデルを変える
+  faster-whisper 形式のモデルなら差し替えて使えます。models フォルダの中に
+  モデルごとのフォルダを作り、下のページの「Files and versions」から model.bin・
+  config.json・tokenizer.json・vocabulary.*・preprocessor_config.json（あれば）を
+  ダウンロードして入れてください。「参照」で選ぶか、次のフォルダ名で置くと
+  起動時に自動で選ばれます。
+    kotoba-whisper-v2.0 … 日本語向けに調整されたモデル
+      https://huggingface.co/kotoba-tech/kotoba-whisper-v2.0-faster
+    large-v3 … 精度重視。重く、メモリを多く使う
+      https://huggingface.co/Systran/faster-whisper-large-v3
+    medium / small … 軽い。精度は下がる
+      https://huggingface.co/Systran/faster-whisper-medium
+      https://huggingface.co/Systran/faster-whisper-small
+  詳しくは README（GitHub）の「モデルを変える」をご覧ください。
+
 ■ うまく動かないとき
   EXE と同じフォルダ（書き込めない場合は %LOCALAPPDATA%\文字起こしツール）に
   「診断ログ.txt」が出力されます。問い合わせは下の GitHub の Issues へ、

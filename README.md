@@ -32,6 +32,21 @@ Windows上で完結する、録音と文字起こしのツールです。録音�
 - コード署名をしていないため、SmartScreenの警告が出ます（「詳細情報」→「実行」）。
 - ウイルス対策ソフトに誤検知された場合は、組織の管理者にexeのハッシュ（`SHA256SUMS.txt` 参照）の除外登録を依頼してください。
 
+## モデルを変える
+
+faster-whisper（CTranslate2）形式のモデルなら差し替えて使えます。`models` フォルダの中にモデルごとのフォルダを作ってファイルを置き、「参照」で選びます（会議録音版はフォルダの中の `model.bin` を、ファイル文字起こし版はフォルダを選択）。
+
+| モデル | 特徴 | フォルダ名 |
+|---|---|---|
+| [large-v3-turbo](https://huggingface.co/dropbox-dash/faster-whisper-large-v3-turbo) | 同梱。速さと精度のバランスがよい | `large-v3-turbo` |
+| [kotoba-whisper v2.0](https://huggingface.co/kotoba-tech/kotoba-whisper-v2.0-faster) | 日本語向けに調整されたモデル | `kotoba-whisper-v2.0` |
+| [large-v3](https://huggingface.co/Systran/faster-whisper-large-v3) | 精度重視。重く、メモリを多く使う（model.bin 約3.1GB） | `large-v3` |
+| [medium](https://huggingface.co/Systran/faster-whisper-medium) / [small](https://huggingface.co/Systran/faster-whisper-small) | 軽い。精度は下がる | `medium` / `small` |
+
+- 各ページの「Files and versions」から、`model.bin`・`config.json`・`tokenizer.json`・`vocabulary.*`・`preprocessor_config.json`（あれば）をダウンロードし、同じフォルダに入れます。
+- 上の表のフォルダ名で置くと、起動時に自動で選ばれます（kotoba-whisper v2.0 → large-v3-turbo → large-v3 → medium → small の順）。
+- ソースから動かす場合は `py tools\download_model.py kotoba-whisper-v2.0` のように取得できます。
+
 ## 動かないとき
 
 [Issues](https://github.com/matsumotodai0925/mojiokoshi/issues) に、exeと同じフォルダの `診断ログ.txt` を添えて問い合わせてください。

@@ -335,6 +335,15 @@ py -m PyInstaller 文字起こしツール_会議録音_fw.spec</pre>
           上の「自分でビルドする場合」の手順で作ってください。</p>
       </details>
       <details>
+        <summary>音声認識のモデルは変えられますか？</summary>
+        <p>faster-whisper 形式のモデルなら差し替えられます。日本語向けの
+          <a href="https://huggingface.co/kotoba-tech/kotoba-whisper-v2.0-faster">kotoba-whisper v2.0</a>、
+          精度重視の <a href="https://huggingface.co/Systran/faster-whisper-large-v3">large-v3</a>、
+          軽い <a href="https://huggingface.co/Systran/faster-whisper-medium">medium</a> /
+          <a href="https://huggingface.co/Systran/faster-whisper-small">small</a> などがあります。
+          置き方は <a href="https://github.com/matsumotodai0925/mojiokoshi#モデルを変える">README の「モデルを変える」</a>をご覧ください。</p>
+      </details>
+      <details>
         <summary>うまく動きません。どこに問い合わせればいいですか？</summary>
         <p>EXE と同じフォルダに「診断ログ.txt」が出力されます。<a href="https://github.com/matsumotodai0925/mojiokoshi/issues">GitHub の Issues</a> に、
           このファイルを添えて書き込んでください。Issues は公開されるため、診断ログに含まれるPCの構成や
