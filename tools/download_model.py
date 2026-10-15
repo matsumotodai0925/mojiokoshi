@@ -28,7 +28,7 @@ for _s in (sys.stdout, sys.stderr):
 from huggingface_hub import snapshot_download  # noqa: E402
 
 REPOS = {
-    'large-v3-turbo': 'mobiuslabsgmbh/faster-whisper-large-v3-turbo',
+    'large-v3-turbo': 'dropbox-dash/faster-whisper-large-v3-turbo',
     'kotoba-whisper-v2.0': 'kotoba-tech/kotoba-whisper-v2.0-faster',
     'large-v3': 'Systran/faster-whisper-large-v3',
     'medium': 'Systran/faster-whisper-medium',
