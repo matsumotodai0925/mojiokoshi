@@ -1,0 +1,4 @@
+dtopo_A.tt3 extent [140.0,176.0]x[34.0,65.0] dx=3min max|dz| at edge before taper = 0.2028 m
+dtopo_B.tt3 extent [138.0,176.0]x[32.0,65.0] dx=3min max|dz| at edge before taper = 0.1818 m
+dtopo_C.tt3 extent [132.0,176.0]x[29.0,65.0] dx=3min max|dz| at edge before taper = 0.1502 m
+dtopo_V2025.tt3 extent [142.0,175.0]x[36.0,65.0] dx=3min max|dz| at edge before taper = 0.0064 m

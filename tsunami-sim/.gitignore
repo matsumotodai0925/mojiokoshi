@@ -1,0 +1,9 @@
+# 大きい中間ファイル（スクリプトで再生成できる）
+work/
+geoclaw/xgeoclaw
+geoclaw/*.o
+geoclaw/*.mod
+geoclaw/build.log
+geoclaw/.data
+geoclaw/.exe
+__pycache__/
